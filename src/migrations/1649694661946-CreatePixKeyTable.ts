@@ -21,6 +21,10 @@ export class CreatePixKeyTable1649694661946 implements MigrationInterface {
 						type: 'varchar',
 					},
 					{
+						name: 'owner_name',
+						type: 'varchar',
+					},
+					{
 						name: 'key',
 						type: 'varchar',
 					},

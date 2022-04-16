@@ -44,21 +44,22 @@ export class PixKeyController {
 		@Body(new ValidationPipe({ errorHttpStatusCode: 422 })) // valida o corpo antes de seguir
 		body: PixKeyDto,
 	) {
-		const { balance: actualBalance } =
+		const { balance: actualBalance, owner_name } =
 			await this.bankAccountRepo.findOneOrFail(bankAccountId);
 		const { balance, ...pixInfo } = body;
 		const value = {
 			bank_account_id: bankAccountId,
 			...pixInfo,
+			owner_name,
 		};
-		const pixKey = this.pixKeyRepo.create(value);
-		const pixKeyInfo = await this.pixKeyRepo.save(pixKey);
+		let pixKey = this.pixKeyRepo.create(value);
+		pixKey = await this.pixKeyRepo.save(pixKey);
 
 		const newBalance = actualBalance + balance;
 		const newUserInfo = await this.bankAccountRepo.update(bankAccountId, {
 			balance: newBalance,
 		});
 
-		return { newUserInfo, pixKeyInfo };
+		return { newUserInfo, pixKey };
 	}
 }

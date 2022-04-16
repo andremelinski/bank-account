@@ -26,6 +26,9 @@ export class PixKey {
 	@Column()
 	key: string;
 
+	@Column()
+	owner_name: string;
+
 	// using fk and how it's binded
 	@ManyToOne(() => BankAccount)
 	@JoinColumn({ name: 'bank_account_id' })

@@ -7,3 +7,6 @@ Entra do container -> docker-compose exec app bash
 Creates a new migration file. -> npm run typeorm migration:create -- -n <ModelName>
 
 inicia a migração e criação da table -> npm run typeorm migraiton:run
+
+entra no postgress -> docker exec -it 5978ce97c2ef psql -U postgres -W nest 
+ password: root
