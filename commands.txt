@@ -1,0 +1,9 @@
+Antes de entrar no projeto, precisa dar permission para o shell command -> chmod +x .docker/entrypoint.sh 
+docker-compose up para testar se deu boa
+
+
+Entra do container -> docker-compose exec app bash
+
+Creates a new migration file. -> npm run typeorm migration:create -- -n <ModelName>
+
+inicia a migração e criação da table -> npm run typeorm migraiton:run
