@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "90611bbd-6acf-4885-8283-67afb151f51c",
+		"name": "Nest-Bank-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:3000/bank-accounts/de9a9911-ace6-44a1-833c-c6bba5127547",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/bank-accounts/de9a9911-ace6-44a1-833c-c6bba5127547",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bank-accounts",
+						"de9a9911-ace6-44a1-833c-c6bba5127547"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/bank-accounts/de9a9911-ace6-44a1-833c-c6bba5127547/pix-keys",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"kind\": \"email\",\n        \"key\": \"email@gmail.com\",\n        \"balance\": 4\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/bank-accounts/de9a9911-ace6-44a1-833c-c6bba5127547/pix-keys",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bank-accounts",
+						"de9a9911-ace6-44a1-833c-c6bba5127547",
+						"pix-keys"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
